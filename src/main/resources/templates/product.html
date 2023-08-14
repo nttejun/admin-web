@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <title>상품</title>
+</head>
+<body>
+<div>상품 페이지</div>
+<div id="productList"></div>
+</body>
+<script type="application/javascript">
+  async function fetchProductList() {
+    try {
+
+      const url = "/admin/product/list";
+      const response = await fetch(url);
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+
+      const data = await response.text();
+      const productList = document.getElementById("productList");
+      productList.innerHTML = data;
+
+    } catch (error) {
+      console.error("Fetch error:", error);
+    }
+  }
+  fetchProductList();
+
+</script>
+</html>

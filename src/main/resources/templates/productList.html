@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <title>상품</title>
+</head>
+<body>
+<div>상풍 목록</div>
+<div th:fragment="list" id="productList">
+  <div th:value="${product}" th:text="${product}"></div>
+</div>
+</body>
+<script type="application/javascript"></script>
+</html>
